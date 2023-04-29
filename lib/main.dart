@@ -58,7 +58,7 @@ class MainApp extends StatelessWidget {
                         // YoutubeDownloadTest or youtubeMP3
                         if (filePath.value != "" && downloadPath.value != "") {
                           await shell.run(
-                              "./YoutubeDownloadTest ${filePath.value} ${downloadPath.value}");
+                              "YoutubeDownloadTest ${filePath.value} ${downloadPath.value}");
                           isFinished.value = true;
                           filePath.value = "";
                           downloadPath.value = "";
