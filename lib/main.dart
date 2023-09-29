@@ -59,7 +59,7 @@ class MainApp extends StatelessWidget {
               onPressed: () async {
                 String? directoryPath = await getDirectoryPath();
                 if (directoryPath != null) {
-                  downloadPath.value = directoryPath;
+                  downloadPath.value = "$directoryPath/";
                   downloadPath.notifyListeners();
                 }
               },
@@ -82,7 +82,7 @@ class MainApp extends StatelessWidget {
                                 listLink.value.length >= 1) {
                               for (var linkValue in listLink.value) {
                                 await shell.run(
-                                    "/home/hbasri/Documents/Programming/dotnet-Projects/YoutubeDownloadTest/bin/release/net7.0/linux-x64/publish/YoutubeDownloadTest ${filePath.value} $linkValue mp3");
+                                    "/home/hbasri/Documents/Programming/dotnet-Projects/YoutubeDownloadTest/bin/Release/net7.0/linux-x64/publish/YoutubeDownloadTest ${filePath.value} $linkValue ${downloadPath.value} mp3");
                                 downloadCount.value += 1;
                                 downloadCount.notifyListeners();
                               }
